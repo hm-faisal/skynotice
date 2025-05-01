@@ -4,6 +4,9 @@
 /* Tailwind CSS  */
 @import "tailwindcss";
 
+/* Tailwind CSS Dark Mode setup  */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 body {
   font-family: "Poppins", serif;
   font-weight: 400;
@@ -15,4 +18,47 @@ body {
     rgba(73, 76, 212, 1) 0.1%,
     rgba(3, 1, 50, 1) 100.2%
   );
+}
+
+@layer utilities {
+  .header-section {
+    @apply flex justify-between flex-col md:flex-row px-7 items-center bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)] rounded h-full text-white shadow-lg shadow-[rgba(0,0,0,0.1)] max-h-[10vh];
+  }
+  .input-element {
+    @apply px-4 py-2 rounded-lg bg-transparent border border-[rgba(255,255,255,0.2)]  outline-none bg-white placeholder:bg-white placeholder:rounded-md text-black dark:bg-transparent dark:placeholder:bg-transparent dark:text-white;
+  }
+
+  .weather-section {
+    @apply text-white rounded-md p-4 gap-2 bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)];
+  }
+
+  .highlights {
+    @apply p-4 rounded-md bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)];
+  }
+
+  .history {
+    @apply p-4 rounded-md bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.2)] h-full;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

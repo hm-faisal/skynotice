@@ -1,48 +1,29 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
+import Header from "../components/Header";
+import History from "../components/History";
+import TodayHighlights from "../components/TodayHighlights";
+import TodayWeather from "../components/TodayWeather";
 import { RootState } from "./store";
-import { setLocation } from "../features/location/locationSlice";
-import { getCurrentLocation } from "../utils/getCurrtentLocation";
-import { useEffect } from "react";
-import { getWeather } from "../utils/getWeatherData";
 
 const HomePage = () => {
-  const location = useSelector((state: RootState) => state.location);
-  const dispatch = useDispatch();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const target = e.target as typeof e.target & {
-      location: { value: string };
-    };
-    dispatch(setLocation(target.location.value));
-  };
-
-  useEffect(() => {
-    (async function () {
-      getCurrentLocation(setLocation);
-      console.log(location);
-
-      const weather = await getWeather(
-        location,
-        import.meta.env.VITE_WEATHER_BASE_URL
-      );
-      console.log(weather);
-    })();
-  }, [location]);
-
+  const darkTheme = useSelector((state: RootState) => state.darkTheme);
   return (
-    <div className=" h-screen p-4 flex flex-col gap-4">
-      <header className="border">
-        Weather app location {location.city}
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="location" id="location" />{" "}
-          <button type="submit">Search</button>
-        </form>
+    <div
+      className="max-h-screen h-screen p-2 grid grid-cols-12 grid-rows-9 gap-2"
+      data-theme={darkTheme ? "dark" : "light"}
+    >
+      <header className="row-span-1 col-span-12">
+        <Header />
       </header>
-      <main className="grid grid-cols-12 justify-between gap-4 items-center">
-        <div className="border col-span-8">hello</div>
-        <aside className="border col-span-4">world</aside>
-      </main>
+      <div className="row-span-4 col-span-8">
+        <TodayWeather />
+      </div>
+      <aside className="col-span-4 row-span-8 h-full">
+        <History />
+      </aside>
+      <div className="row-span-4 col-span-8">
+        <TodayHighlights />
+      </div>
     </div>
   );
 };
