@@ -12,7 +12,7 @@ const Header = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className="flex items-center gap-2 md:gap-4 text-base p-1 md:p-4 flex-col md:flex-row order-3 md:order-2 max-w-xs mx-auto"
+          className="flex items-center gap-2 md:gap-4 text-base flex-col md:flex-row order-3 md:order-2 max-w-full"
         >
           <input
             type="text"
@@ -27,7 +27,7 @@ const Header = () => {
         </form>
 
         <div className="flex items-center justify-between gap-4 text-xl *:cursor-pointer *:transition *:duration-300 order-2 md:order-3">
-          <button className="hover:text-[#409ac7] p-4" onClick={toggleTheme}>
+          <button className="hover:text-[#409ac7]" onClick={toggleTheme}>
             <img
               src={darkTheme ? lightIcon : darkIcon}
               alt=""
