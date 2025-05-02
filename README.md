@@ -26,11 +26,11 @@ Skynotice is an elegant and responsive weather web application that allows users
 
 ###### Light mode
 
-![Skynotice](./src/assets/skynotice-light.png).
+![Skynotice](./src/assets/skynotice-light.png)
 
 ###### Dark mode
 
-![Skynotice](./src/assets/skynotice-dark.png).
+![Skynotice](./src/assets/skynotice-dark.png)
 
 ### Technologies Used.
 
