@@ -4,6 +4,9 @@ Skynotice is an elegant and responsive weather web application that allows users
 
 ### Features.
 
+- **Give current weather update with location**.
+  Provide current weather update with your current location based on your Geolocation. if access denied weather update will be default location "Chittagong, BD"
+
 - **City-based Weather Search**.
   Lookup any city and get the current weather data along with the current, max, and min temperature.
 
