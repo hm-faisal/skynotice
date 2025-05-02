@@ -88,6 +88,8 @@ npm run dev
 5. **Visit the app:**
    Open your browser and go to http://localhost:5173
 
+> you can setup as well as yarn or bun using their own way
+
 ### Project Structure
 
 ```
