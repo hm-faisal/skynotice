@@ -5,16 +5,16 @@ const TodayHighlights = () => {
   const { highlights, loading } = useHighlights();
 
   return (
-    <div className="highlights h-[43vh]">
+    <div className="highlights h-full">
       {loading ? (
         <Loading />
       ) : (
-        <>
-          <h2 className="text-4xl font-bold">Today&apos;s Highlights</h2>
-          <div className="content grid grid-cols-2 mt-4 gap-2">
+        <div className="h-full flex flex-col justify-center">
+          <h2 className="text-4xl font-bold flex-1">Today&apos;s Highlights</h2>
+          <div className="content grid md:grid-cols-2 grid-cols-1 mt-4 gap-2 flex-auto">
             {highlights.map((item) => (
               <div
-                className="flex justify-between items-center flex-col-reverse md:flex-row bg-[#fff] p-4 rounded-md dark:bg-transparent dark:border"
+                className="flex justify-between items-center bg-[#fff] p-4 rounded-md dark:bg-transparent dark:border"
                 key={item.id}
               >
                 <div className="content flex justify-center items-center gap-2">
@@ -39,7 +39,7 @@ const TodayHighlights = () => {
               </div>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

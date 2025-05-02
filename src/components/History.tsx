@@ -7,7 +7,7 @@ const History = () => {
   return (
     <>
       <div className="history max-h-full overflow-hidden">
-        <h3 className="text-2xl font-bold">Searched History</h3>
+        <h3 className="text-2xl font-bold mb-2">Searched History</h3>
         <div className="overflow-y-auto overflow-x-hidden pr-2 h-full">
           {history.map((item, i) => (
             <div
@@ -30,7 +30,7 @@ const History = () => {
                   <p>{item?.description}</p>
                 </div>
                 <div className="">
-                  <p className="text-4xl min-w-28 text-black dark:text-[rgba(255,255,255,0.9)]">
+                  <p className="text-xl md:text-4xl min-w-28 text-black dark:text-[rgba(255,255,255,0.9)]">
                     {item.temp}
                     <sup>o</sup> C
                   </p>

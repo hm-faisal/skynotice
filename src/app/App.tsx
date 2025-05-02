@@ -9,21 +9,21 @@ const HomePage = () => {
   const darkTheme = useSelector((state: RootState) => state.darkTheme);
   return (
     <div
-      className="max-h-screen h-screen p-2 grid grid-cols-12 grid-rows-9 gap-2"
+      className="h-screen p-2 lg:grid lg:grid-cols-12 lg:grid-rows-9 gap-2 flex flex-col"
       data-theme={darkTheme ? "dark" : "light"}
     >
-      <header className="row-span-1 col-span-12">
+      <header className="lg:row-span-1 lg:col-span-12 order-1">
         <Header />
       </header>
-      <div className="row-span-4 col-span-8">
+      <div className="row-span-4 col-span-8 order-2">
         <TodayWeather />
       </div>
-      <aside className="col-span-4 row-span-8 h-full">
-        <History />
-      </aside>
-      <div className="row-span-4 col-span-8">
+      <div className="row-span-4 col-span-8 lg:order-4 order-3">
         <TodayHighlights />
       </div>
+      <aside className="col-span-4 row-span-8 h-full lg:order-3 order-4">
+        <History />
+      </aside>
     </div>
   );
 };

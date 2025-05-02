@@ -11,8 +11,8 @@ const TodayWeather = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="grid grid-cols-3 justify-between items-stretch gap-2">
-          <div className="bg-white text-black p-4 rounded-md dark:bg-transparent dark:text-white flex flex-col justify-evenly items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 justify-between items-stretch gap-2 h-full">
+          <div className="bg-white text-black p-4 md:p-1 rounded-md dark:bg-transparent dark:text-white flex flex-col justify-evenly items-center">
             {weather && (
               <img
                 src={icon}
@@ -20,7 +20,7 @@ const TodayWeather = () => {
                 className="mx-auto"
               />
             )}
-            <p className="text-4xl min-w-28 ">
+            <p className="text-4xl">
               {convertTemp(weather?.main?.temp).celsius.toFixed()}
               <sup>o</sup> C
             </p>
@@ -35,7 +35,7 @@ const TodayWeather = () => {
           </div>
           <div className="bg-white text-black p-4 rounded-md dark:bg-transparent dark:text-white flex flex-col justify-evenly items-center">
             <img src={maxTemp} alt="" className="w-14 h-14 rounded-md" />
-            <p>
+            <p className="text-4xl">
               {convertTemp(weather?.main?.temp_max).celsius.toFixed()}
               <sup>o</sup> C
             </p>
@@ -44,7 +44,7 @@ const TodayWeather = () => {
 
           <div className="bg-white text-black p-4 rounded-md dark:bg-transparent dark:text-white flex flex-col justify-evenly items-center">
             <img src={minTemp} alt="" className="w-14 h-14 rounded-md" />
-            <p>
+            <p className="text-4xl">
               {convertTemp(weather?.main?.temp_min).celsius.toFixed()}
               <sup>o</sup> C
             </p>

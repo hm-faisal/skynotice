@@ -49,7 +49,7 @@ const useWeather = () => {
         dispatch(setWeatherData(weather));
 
         const historyItem: HistoryType = {
-          icon: `https://openweathermap.org/img/wn/${weather?.weather[0]?.icon}@2x.png`,
+          icon: `https://openweathermap.org/img/wn/${weather?.weather?.[0]?.icon}@2x.png`,
           description: weather?.weather[0]?.description ?? "",
           city: weather?.name ?? "",
           country: weather?.sys?.country ?? "",
@@ -81,7 +81,7 @@ const useWeather = () => {
     dispatch(setLocation(target.location.value));
   };
 
-  const icon = `https://openweathermap.org/img/wn/${weather?.weather[0]?.icon}@2x.png`;
+  const icon = `https://openweathermap.org/img/wn/${weather?.weather?.[0]?.icon}@2x.png`;
 
   return { handleSubmit, weather, icon, loading };
 };

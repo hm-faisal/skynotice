@@ -5,7 +5,6 @@ import getHumidity from "../../../utils/getHumidity";
 import getWindSpeedDescription from "../../../utils/getWindSpeedDescription";
 import convertTemp from "../../../utils/convertTemp";
 import sunCloudy from "../../../assets/sun-cloudy.png";
-import sunWindy from "../../../assets/sun-windy.png";
 import compass from "../../../assets/compass.png";
 import drops from "../../../assets/drops.png";
 import windSpeed from "../../../assets/wind-speed.png";
